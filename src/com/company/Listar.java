@@ -1,7 +1,7 @@
 package com.company;
 
 public class Listar {
-    boolean mostrar(){
+    void mostrar(){
         Cabeza cabeza = new Cabeza();
         cabeza.mostrar("Alumnos");
 
@@ -10,4 +10,4 @@ public class Listar {
             }
     }
 }
-//
+//halo
