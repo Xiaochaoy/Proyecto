@@ -1,7 +1,7 @@
 package com.company;
 
-public class CrearPersona {
+public class Persona {
     String nom;
-    int edat;
+    String edat;
     String email;
 }

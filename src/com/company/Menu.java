@@ -1,10 +1,27 @@
 package com.company;
 
 public class Menu {
-    boolean mostrar(){
-        Cabeza cabeza = new Cabeza();
-        cabeza.mostrar("Inicio");
-        Opciones opciones = new Opciones();
-        return opciones.mostrar();
+    String elegirOpcion(String[] opciones){
+
+        boolean seguirPidiendo = true;
+        String opcion = "";
+        while(seguirPidiendo) {
+            for (int i = 0; i < opciones.length; i++) {
+                System.out.println((i + 1) + ". " + opciones[i]);
+            }
+
+            System.out.print("\nOpcion:" + " ");
+
+            opcion = Main.scanner.nextLine();
+
+            if (Integer.parseInt(opcion) > opciones.length) {
+                Mensaje mensaje = new Mensaje();
+                mensaje.mostrarError("Esa opcion no existe");
+            } else {
+                seguirPidiendo = false;
+            }
+        }
+
+        return opcion;
     }
 }

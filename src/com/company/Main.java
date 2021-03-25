@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    static CrearPersona crearPersona = new CrearPersona();
+    static Personas personas = new Personas();
 
     public static void main(String[] args) {
 
-            Menu menu = new Menu();
-            while (menu.mostrar()){}
-
+        PantallaMenu pantallaMenu = new PantallaMenu();
+        while(pantallaMenu.mostrar()) { }
     }
 }
