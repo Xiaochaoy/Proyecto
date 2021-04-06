@@ -6,14 +6,22 @@ public class PantallaBuscar {
         cabeza.mostrar("Buscame este Alumno");
         System.out.print("A quien quieres buscar: ");
 
-        String p = Main.scanner.nextLine();
+        int p = Main.scanner.nextInt();
+        Main.scanner.nextLine();
 
-        for (Persona persona : Main.personas.persona) {
-            if (p.equals(persona.nom)) {
-                System.out.println("NOM: " + persona.nom);
-                System.out.println("EDAT: " + persona.edat);
-                System.out.println("EMAIL: " + persona.email);
-            }
-        }
+        Persona persona = Main.personas.persona.get(p-1);
+
+        System.out.println("NOM: " + persona.nom);
+        System.out.println("EDAT: " + persona.edat);
+        System.out.println("EMAIL: " + persona.email);
+
+//        int i = 1;
+//        for (Persona persona : Main.personas.persona) {
+//            if (p == persona) {
+//                System.out.println("NOM: " + persona.nom);
+//                System.out.println("EDAT: " + persona.edat);
+//                System.out.println("EMAIL: " + persona.email);
+//            }
+//        }
     }
 }

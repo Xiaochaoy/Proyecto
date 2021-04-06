@@ -4,9 +4,13 @@ public class PantallaListar {
     boolean mostrar() {
         Cabeza cabeza = new Cabeza();
         cabeza.mostrar("Alumnos");
-         for (Persona persona : Main.personas.persona) {
-             System.out.println("- " + persona.nom);
+
+        int i=1;
+        for (Persona persona : Main.personas.persona) {
+             System.out.println(i + " - " + persona.nom);
+             i++;
         }
+
         System.out.println();
         Menu menu = new Menu();
         String[] opciones = {"Buscar persona", "Salir del programa"};

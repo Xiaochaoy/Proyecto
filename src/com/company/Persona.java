@@ -2,6 +2,6 @@ package com.company;
 
 public class Persona {
     String nom;
-    String edat;
+    int edat;
     String email;
 }

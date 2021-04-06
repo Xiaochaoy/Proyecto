@@ -1,10 +1,11 @@
 package com.company;
 
 public class CampoDeTexto {
-    String pedir(String prompt){
-        return pedir(prompt,false);
+    String pedirTexto(String prompt){
+        return pedirTexto(prompt,false);
     }
-    String pedir(String prompt, boolean obligatorio){
+
+    String pedirTexto(String prompt, boolean obligatorio){
         System.out.println("\033[33m" + prompt + "\033[0m");
         if (!obligatorio){
             return Main.scanner.nextLine();
@@ -19,5 +20,11 @@ public class CampoDeTexto {
                 }
             }
         }
+    }
+
+    int pedirNumero(String prompt){
+        System.out.println("\033[33m" + prompt + "\033[0m");
+        Main.scanner.nextLine();
+        return Main.scanner.nextInt();
     }
 }
