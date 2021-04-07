@@ -5,6 +5,5 @@ import java.util.List;
 
 public class Personas {
 
-    List<Datos> datos = new ArrayList<>();
-
+    List<Alumnos> datoes = new ArrayList<>();
 }

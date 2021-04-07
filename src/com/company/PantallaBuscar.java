@@ -9,11 +9,11 @@ public class PantallaBuscar {
         int p = Main.scanner.nextInt();
         Main.scanner.nextLine();
 
-        Datos datos = Main.personas.datos.get(p-1);
+        Alumnos alumnos = Main.personas.datoes.get(p-1);
 
-        System.out.println("NOM: " + datos.nom);
-        System.out.println("EDAT: " + datos.edat);
-        System.out.println("EMAIL: " + datos.email);
+        System.out.println("NOM: " + alumnos.nom);
+        System.out.println("EDAT: " + alumnos.edat);
+        //System.out.println("EMAIL: " + alumnos.email);
 
 //        int i = 1;
 //        for (Persona persona : Main.personas.persona) {
