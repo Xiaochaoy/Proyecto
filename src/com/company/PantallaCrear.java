@@ -5,13 +5,13 @@ public class PantallaCrear {
         Cabeza cabeza = new Cabeza();
         cabeza.mostrar("Creació");
 
-        Persona persona = new Persona();
+        Datos datos = new Datos();
         CampoDeTexto campoDeTexto = new CampoDeTexto();
 
-        persona.nom = campoDeTexto.pedirTexto("El teu nom: ", true);
-        persona.edat = campoDeTexto.pedirNumero("Quato anyo: ");
-        persona.email = campoDeTexto.pedirTexto("Dame tu correo: ", false);
+        datos.nom = campoDeTexto.pedirTexto("El teu nom: ", true);
+        datos.edat = campoDeTexto.pedirNumero("Quato anyo: ");
+        datos.email = campoDeTexto.pedirTexto("Dame tu correo: ", false);
 
-        Main.personas.persona.add(persona);
+        Main.personas.datos.add(datos);
     }
 }

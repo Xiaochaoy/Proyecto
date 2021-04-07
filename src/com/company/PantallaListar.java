@@ -6,8 +6,8 @@ public class PantallaListar {
         cabeza.mostrar("Alumnos");
 
         int i=1;
-        for (Persona persona : Main.personas.persona) {
-             System.out.println(i + " - " + persona.nom);
+        for (Datos datos : Main.personas.datos) {
+             System.out.println(i + " - " + datos.nom);
              i++;
         }
 

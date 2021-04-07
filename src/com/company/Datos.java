@@ -1,6 +1,6 @@
 package com.company;
 
-public class Persona {
+public class Datos {
     String nom;
     int edat;
     String email;
