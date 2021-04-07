@@ -24,7 +24,14 @@ public class CampoDeTexto {
 
     int pedirNumero(String prompt){
         System.out.println("\033[33m" + prompt + "\033[0m");
-        Main.scanner.nextLine();
-        return Main.scanner.nextInt();
+        while(true) {
+            String leido = Main.scanner.nextLine();
+            try {
+                return Integer.parseInt(leido);
+            } catch (Exception e) {
+                Mensaje mensaje = new Mensaje();
+                mensaje.mostrarError("Quiero numero!!!");
+            }
+        }
     }
 }

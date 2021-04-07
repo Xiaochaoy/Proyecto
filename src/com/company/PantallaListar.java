@@ -13,7 +13,7 @@ public class PantallaListar {
 
         System.out.println();
         Menu menu = new Menu();
-        String[] opciones = {"Buscar persona", "Salir del programa"};
+        String[] opciones = {"Buscar persona", "Volver para atras"};
         String opcion = menu.elegirOpcion(opciones);
         CampoDeTexto campoDeTexto = new CampoDeTexto();
         System.out.println();
