@@ -7,6 +7,7 @@ public class Alumnos {
     public Alumnos(String nom, int edat) {
         this.nom = nom;
         this.edat = edat;
+        //this.email = email;
     }
 
 }

@@ -8,9 +8,6 @@ public class Main {
     static BaseDeDatos db = BaseDeDatos.get();
 
     public static void main(String[] args) {
-
-
-
         PantallaMenu pantallaMenu = new PantallaMenu();
         while(pantallaMenu.mostrar()) { }
 

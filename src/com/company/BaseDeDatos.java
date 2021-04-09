@@ -32,9 +32,17 @@ public class BaseDeDatos {
         }
     }
 
+    void deleteAlumnos(String p){
+        try (Statement statement = connection.createStatement()) {
+            statement.execute("DELETE * from Alumnos where nom like ?");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     void createTables(){
         try (Statement statement = connection.createStatement()) {
-            statement.execute("CREATE TABLE IF NOT EXISTS Alumnos (nom text, edat real)");
+            statement.execute("CREATE TABLE IF NOT EXISTS Alumnos (nom text, edat real, email text)");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -46,6 +54,7 @@ public class BaseDeDatos {
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, nom);
             preparedStatement.setInt(2, edat);
+            //preparedStatement.setString(3, email);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -62,7 +71,7 @@ public class BaseDeDatos {
             while (resultSet.next()) {
                 String nom = resultSet.getString("nom");
                 int edat = resultSet.getInt("edat");
-
+                //String email = resultSet.getString("email");
                 listaAlumnos.add(new Alumnos(nom, edat));
             }
         } catch (SQLException e) {
@@ -70,25 +79,5 @@ public class BaseDeDatos {
         }
 
         return listaAlumnos;
-        /*public List<Alumnos> selectAlumnosConNotaSuperiorA(int edatxd;){
-            String sql = "SELECT nombre, nota FROM estudiantes WHERE nota > ?";
-
-            List<Alumnos> listaAlumnos = new ArrayList<>();
-            try (PreparedStatement preparedStatement  = connection.prepareStatement(sql)){
-
-                preparedStatement.setInt(1, edatxd);
-                ResultSet resultSet  = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    String nom = resultSet.getString("nom");
-                    int edat = resultSet.getInt("edat");
-
-                    listaAlumnos.add(new Alumnos(nom, edat));
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-
-            return listaAlumnos ;
-        }*/
     }
 }
