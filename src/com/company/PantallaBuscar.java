@@ -9,7 +9,7 @@ public class PantallaBuscar {
         int p = Main.scanner.nextInt();
         Main.scanner.nextLine();
 
-        Alumnos alumnos = Main.personas.datoes.get(p-1);
+        Alumnos alumnos = Main.db.selectAlumnos().get(p-1);
 
         System.out.println("NOM: " + alumnos.nom);
         System.out.println("EDAT: " + alumnos.edat);
