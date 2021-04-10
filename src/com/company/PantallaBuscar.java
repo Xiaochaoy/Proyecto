@@ -13,7 +13,7 @@ public class PantallaBuscar {
 
         System.out.println("NOM: " + alumnos.nom);
         System.out.println("EDAT: " + alumnos.edat);
-        //System.out.println("EMAIL: " + alumnos.email);
+        System.out.println("EMAIL: " + alumnos.email);
 
 //        int i = 1;
 //        for (Persona persona : Main.personas.persona) {

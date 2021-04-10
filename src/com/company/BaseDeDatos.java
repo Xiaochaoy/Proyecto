@@ -34,7 +34,7 @@ public class BaseDeDatos {
 
     void deleteAlumnos(String p){
         try (Statement statement = connection.createStatement()) {
-            statement.execute("DELETE * from Alumnos where nom like ?");
+            statement.execute("DELETE from Alumnos where nom= ?");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -48,13 +48,13 @@ public class BaseDeDatos {
         }
     }
 
-    public void insertAlumnos(String nom, int edat) {
-        String sql = "INSERT INTO Alumnos(nom,edat) VALUES(?,?)";
+    public void insertAlumnos(String nom, int edat, String email) {
+        String sql = "INSERT INTO Alumnos(nom,edat,email) VALUES(?,?,?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, nom);
             preparedStatement.setInt(2, edat);
-            //preparedStatement.setString(3, email);
+            preparedStatement.setString(3, email);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -62,7 +62,7 @@ public class BaseDeDatos {
     }
 
     public List<Alumnos> selectAlumnos(){
-        String sql = "SELECT nom, edat FROM Alumnos";
+        String sql = "SELECT nom, edat, email FROM Alumnos";
 
         List<Alumnos> listaAlumnos = new ArrayList<>();
         try (PreparedStatement preparedStatement  = connection.prepareStatement(sql)){
@@ -71,11 +71,13 @@ public class BaseDeDatos {
             while (resultSet.next()) {
                 String nom = resultSet.getString("nom");
                 int edat = resultSet.getInt("edat");
-                //String email = resultSet.getString("email");
-                listaAlumnos.add(new Alumnos(nom, edat));
+                String email = resultSet.getString("email");
+                listaAlumnos.add(new Alumnos(nom, edat, email));
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Mensaje mensaje = new Mensaje();
+            mensaje.mostrarError("No hay Alumnos!");
+            //System.out.println(e.getMessage());
         }
 
         return listaAlumnos;

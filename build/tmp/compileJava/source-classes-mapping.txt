@@ -1,3 +1,5 @@
+com/company/BorrarTodo.java
+ com.company.BorrarTodo
 com/company/BaseDeDatos.java
  com.company.BaseDeDatos
 com/company/PantallaDeEliminar.java

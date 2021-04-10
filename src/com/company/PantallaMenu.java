@@ -16,8 +16,8 @@ public class PantallaMenu {
             PantallaCrear pantallaCrear = new PantallaCrear();
             pantallaCrear.mostrar();
         } else if("3".equals(opcion)) {
-            PantallaDeEliminar pantallaDeEliminar = new PantallaDeEliminar();
-            pantallaDeEliminar.mostrar();
+            BorrarTodo borrarTodo = new BorrarTodo();
+            borrarTodo.mostrar();
         } else if ("4".equals(opcion)){
             return false;
         }

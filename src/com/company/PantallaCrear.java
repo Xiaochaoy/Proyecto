@@ -9,10 +9,10 @@ public class PantallaCrear {
 
         String nom = campoDeTexto.pedirTexto("El teu nom: ", true);
         int edat = campoDeTexto.pedirNumero("Quato anyo: ");
-        //String email = campoDeTexto.pedirTexto("Dame tu correo: ", false);
+        String email = campoDeTexto.pedirTexto("Dame tu correo: ", false);
 
         //Main.personas.datoes.add(alumnos);
         Main.db.createTables();
-        Main.db.insertAlumnos(nom,edat);
+        Main.db.insertAlumnos(nom,edat,email);
     }
 }
