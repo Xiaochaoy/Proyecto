@@ -56,6 +56,7 @@ public class BaseDeDatos {
             preparedStatement.setInt(2, edat);
             preparedStatement.setString(3, email);
             preparedStatement.executeUpdate();
+            System.out.println("\033[35m" + "Muy bien, las metido!" + "\033[0m");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
