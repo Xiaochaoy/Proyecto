@@ -34,7 +34,7 @@ public class BaseDeDatos {
 
     void deleteAlumnos(String p){
         try (Statement statement = connection.createStatement()) {
-            statement.execute("DELETE from Alumnos where nom= ?");
+            statement.execute("DELETE from Alumnos where nom=?");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

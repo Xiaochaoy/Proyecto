@@ -11,6 +11,7 @@ public class PantallaBuscar {
 
         Alumnos alumnos = Main.db.selectAlumnos().get(p-1);
 
+        System.out.println();
         System.out.println("NOM: " + alumnos.nom);
         System.out.println("EDAT: " + alumnos.edat);
         System.out.println("EMAIL: " + alumnos.email);
