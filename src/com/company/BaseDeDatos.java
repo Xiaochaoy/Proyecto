@@ -33,8 +33,10 @@ public class BaseDeDatos {
     }
 
     void deleteAlumnos(String p){
-        try (Statement statement = connection.createStatement()) {
-            statement.execute("DELETE from Alumnos where nom=?");
+        String sql= ("DELETE from Alumnos where nom=?");
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, p);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
